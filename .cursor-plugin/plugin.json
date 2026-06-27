@@ -23,6 +23,7 @@
     "skills",
     "hooks"
   ],
+  "commands": "./.cursor/commands/",
   "skills": "./skills/",
   "rules": "./.cursor/rules/",
   "hooks": "./hooks/cursor-hooks.json"

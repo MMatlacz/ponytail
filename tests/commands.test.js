@@ -37,3 +37,12 @@ test('every registered command ships an OpenCode .opencode/command/*.md', () => 
     );
   }
 });
+
+test('every registered command ships a Cursor .cursor/commands/*.md', () => {
+  for (const name of commands) {
+    assert.ok(
+      fs.existsSync(path.join(root, '.cursor', 'commands', `${name}.md`)),
+      `missing .cursor/commands/${name}.md`,
+    );
+  }
+});

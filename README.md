@@ -122,12 +122,13 @@ This same install also covers the Codex desktop app: restart the app after insta
 ### Cursor
 
 Use this repo as a Cursor plugin, or copy it into your local plugin directory.
-It exposes the same `skills/`, `.cursor/rules/`, and Cursor-native hooks via
+It exposes the same `skills/`, `.cursor/commands/`, `.cursor/rules/`, and Cursor-native hooks via
 `.cursor-plugin/plugin.json`.
 
 Cursor hooks add mode activation at session start, `/ponytail` mode tracking
 before prompt submission, a dependency-install approval gate, a compaction
-reminder, and session cleanup.
+reminder, and session cleanup. Slash commands live in `.cursor/commands/`
+(also available via `/skill-name` or `@` in Agent chat).
 
 ### GitHub Copilot CLI
 
@@ -228,7 +229,7 @@ Which files map to which agent: [Agent portability](docs/agent-portability.md).
 | `/ponytail-gain` | Show the measured impact scoreboard (less code, less cost, more speed) from the benchmark. |
 | `/ponytail-help` | Quick reference for the commands above. |
 
-Commands need a skill-capable host (Claude Code, Codex, OpenCode, Gemini, pi). In Codex they're skills, invoke with `@` (`@ponytail-review`). The instruction-only adapters (Cursor, Windsurf, Cline, Copilot, Kiro, Antigravity) load the always-on ruleset without the commands.
+Commands need a skill-capable host (Claude Code, Codex, OpenCode, Gemini, pi). In Codex they're skills, invoke with `@` (`@ponytail-review`). The Cursor **plugin** install adds `.cursor/commands/` plus skills and hooks; rule-copy-only adapters (Windsurf, Cline, Copilot editor, Kiro) load the always-on ruleset without commands.
 
 ## Development
 
